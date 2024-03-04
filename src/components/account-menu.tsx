@@ -25,9 +25,9 @@ export function AccountMenu() {
 
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel className="flex flex-col">
-          <span>Diego Fernandes</span>
+          <span>Vinicius Reis</span>
           <span className="text-xs font-normal text-muted-foreground">
-            diego@rocketseat.com.br
+            vini@reis.com.br
           </span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
