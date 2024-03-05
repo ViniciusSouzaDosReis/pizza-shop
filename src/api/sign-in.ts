@@ -5,5 +5,5 @@ interface SignInBody {
 }
 
 export async function signIn({ email }: SignInBody) {
-  await api.post('authenticate', { email })
+  await api.post('/authenticate', { email })
 }

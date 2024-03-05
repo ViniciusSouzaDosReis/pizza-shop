@@ -13,7 +13,7 @@ export async function registerRestaurant({
   email,
   phone,
 }: RegisterRestaurantBody) {
-  await api.post('restaurants', {
+  await api.post('/restaurants', {
     restaurantName,
     managerName,
     email,
