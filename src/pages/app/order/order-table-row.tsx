@@ -8,7 +8,7 @@ import { approveOrder } from '@/api/approve-order'
 import { cancelOrder } from '@/api/cancel-order'
 import { deliverOrder } from '@/api/deliver-order'
 import { dispatchOrder } from '@/api/dispatch-order'
-import { GetOrderResponse } from '@/api/get-orders'
+import { GetOrdersResponse } from '@/api/get-orders'
 import { OrderStatus } from '@/components/order-status'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogTrigger } from '@/components/ui/dialog'
@@ -32,7 +32,7 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
 
   function updateOrderStatus(orderId: string, status: OrderStatus) {
     // Pegamos todos as informações da query de pedidos de todas as paginas baseado na unica key que não muda
-    const ordersListCache = queryClient.getQueriesData<GetOrderResponse>({
+    const ordersListCache = queryClient.getQueriesData<GetOrdersResponse>({
       queryKey: ['orders'],
     })
 
@@ -42,7 +42,7 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
       }
 
       // Percorre as paginas e para cada uma iremos trocar o seu httpState baseando na condicional
-      queryClient.setQueryData<GetOrderResponse>(cacheKey, {
+      queryClient.setQueryData<GetOrdersResponse>(cacheKey, {
         ...cacheOrder,
         orders: cacheOrder.orders.map((order) => {
           if (order.orderId === orderId) {
