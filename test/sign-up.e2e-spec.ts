@@ -11,7 +11,7 @@ test('sign up successfully', async ({ page }) => {
 
   const toast = page.getByText('Restaurante cadastrado com sucesso!')
 
-  expect(toast).toBeVisible()
+  await expect(toast).toBeVisible()
 })
 test('sign up with error', async ({ page }) => {
   await page.goto('/sign-up', { waitUntil: 'networkidle' })
@@ -24,7 +24,7 @@ test('sign up with error', async ({ page }) => {
 
   const toast = page.getByText('Erro ao cadastrar restaurante.')
 
-  expect(toast).toBeVisible()
+  await expect(toast).toBeVisible()
 })
 test('navigate to sign in page', async ({ page }) => {
   await page.goto('/sign-up', { waitUntil: 'networkidle' })

@@ -58,14 +58,5 @@ test('filter orders by status', async ({ page }) => {
   await page.getByLabel('Pendente').click()
   await page.getByRole('button', { name: 'Filtrar resultados' }).click()
 
-  const tableRows = await page.getByRole('cell', { name: 'Pendente' }).all()
-
-  expect(tableRows).toHaveLength(10)
-
-  await page.waitForTimeout(500)
-  // await page.getByRole('button', { name: 'Filtrar resultados' }).click()
-
-  // expect(
-  //   page.getByRole('cell', { name: 'Customer 1', exact: true }),
-  // ).toBeVisible()
+  await expect(page.getByRole('cell', { name: 'Pendente' })).toHaveCount(10)
 })
