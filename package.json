@@ -29,6 +29,7 @@
     "localforage": "^1.10.0",
     "lucide-react": "^0.344.0",
     "match-sorter": "^6.3.4",
+    "pizzashop-web": "file:",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18.2.0",
